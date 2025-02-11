@@ -2,20 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+@layer base {
+  body {
+    line-height: normal;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .headerTitle {
+    @apply font-film text-[44px] font-700 text-accentYellow tracking-[8px] md:text-[64px] md:tracking-[12px];
+  }
+
+  .btnText {
+    @apply font-mont text-[16px] text-accentYellow font-700 leading-normal tracking-[0.32px];
+  }
+}
+
+@layer utilities {
+  .border-around-yellow {
+    @apply border-[1px] border-accentYellow border-solid rounded-[2px];
+  }
+
+  .gradient-bg {
+    @apply bg-double-gradient md:bg-triple-gradient;
+  }
 }

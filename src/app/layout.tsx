@@ -1,5 +1,30 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import { Montserrat } from 'next/font/google';
+
+import { Header } from '@/layout/Header/Header';
+import { Footer } from '@/layout/Footer/Footer';
+
 import './globals.css';
+
+const montserrat = Montserrat({
+  subsets: ['cyrillic', 'latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-montserrat',
+  display: 'swap',
+});
+
+const filmP3 = localFont({
+  src: [
+    {
+      path: '../../public/fonts/filmp3-bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-filmP3',
+});
 
 export const metadata: Metadata = {
   title: 'To-do',
@@ -13,9 +38,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${montserrat.variable} ${filmP3.variable} `}>
+        <Header />
+
         <main>{children}</main>
-        <footer></footer>
+
+        <Footer />
       </body>
     </html>
   );
