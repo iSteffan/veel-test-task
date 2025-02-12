@@ -2,21 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} */
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 @layer base {
   body {
     line-height: normal;
+  }
+
+  /* this styles added to fix headless ui bug when modal is open */
+  html {
+    padding-right: 0 !important;
+    overflow-y: scroll !important;
   }
 }
 
