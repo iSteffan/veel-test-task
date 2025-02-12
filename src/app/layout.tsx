@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 
   icons: [
     {
-      url: '/public/images/meta/favicon.ico',
+      url: '/meta/favicon.ico',
     },
   ],
 
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: 'Next.js',
     images: [
       {
-        url: '/public/images/meta/openGraph-veel.jpg',
+        url: '/meta/openGraph-veel.jpg',
         width: 800,
         height: 600,
         alt: 'To do test task',
