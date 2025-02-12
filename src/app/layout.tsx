@@ -29,6 +29,45 @@ const filmP3 = localFont({
 export const metadata: Metadata = {
   title: 'To-do',
   description: 'Veel test task',
+  generator: 'Next.js',
+  applicationName: 'Next.js',
+  referrer: 'origin-when-cross-origin',
+  keywords: ['Next.js', 'React', 'JavaScript', 'Test task'],
+  creator: 'Stepan Skichko',
+
+  alternates: {
+    canonical: 'https://veel-test-task.vercel.app/',
+  },
+
+  icons: [
+    {
+      url: '/public/images/meta/favicon.ico',
+    },
+  ],
+
+  openGraph: {
+    title: 'Next.js To do',
+    description: 'Veel test task',
+    url: 'https://veel-test-task.vercel.app/',
+    siteName: 'Next.js',
+    images: [
+      {
+        url: '/public/images/meta/openGraph-veel.jpg',
+        width: 800,
+        height: 600,
+        alt: 'To do test task',
+      },
+    ],
+
+    locale: 'en',
+    type: 'website',
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+  },
 };
 
 export default function RootLayout({
