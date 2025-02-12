@@ -9,7 +9,7 @@ export const Header = () => {
         <p className="headerTitle">{header.task}</p>
         <button
           type="button"
-          className="p-2 btnText border-around-yellow hover:bg-white transition-colors"
+          className="p-2 yellowText border-around-yellow hover:bg-white transition-colors"
         >
           {header.btnText}
         </button>

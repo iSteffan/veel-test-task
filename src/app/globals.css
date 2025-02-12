@@ -25,8 +25,8 @@
     @apply font-film text-[44px] font-700 text-accentYellow tracking-[8px] md:text-[64px] md:tracking-[12px];
   }
 
-  .btnText {
-    @apply font-mont text-[16px] text-accentYellow font-700 leading-normal tracking-[0.32px];
+  .yellowText {
+    @apply font-mont text-[12px] text-accentYellow font-700 leading-normal tracking-[0.32px] md:text-[16px];
   }
 }
 

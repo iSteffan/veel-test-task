@@ -38,10 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${filmP3.variable} `}>
+      <body className={`${montserrat.variable} ${filmP3.variable} flex flex-col min-h-screen`}>
         <Header />
 
-        <main>{children}</main>
+        <main className="flex-1 bg-lemonBg gradient-bg">{children}</main>
 
         <Footer />
       </body>

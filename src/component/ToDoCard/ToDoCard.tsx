@@ -13,8 +13,13 @@ export const ToDoCard = ({ data, deleteTodo }: ToDoCardProp) => {
   const [isCompleted, setIsCompleted] = useState(data.completed);
 
   return (
-    <div className="p-4 flex flex-col justify-between max-w-[400px] h-[110px] border-around-yellow bg-darkBg">
-      <p className={`btnText transition-opacity ${isCompleted ? 'line-through opacity-50' : ''}`}>
+    <div
+      className="p-4 mx-auto flex flex-col justify-between max-w-[400px] h-[100px] border-around-yellow bg-darkBg 
+    md:h-[110px]"
+    >
+      <p
+        className={`yellowText transition-opacity ${isCompleted ? 'line-through opacity-50' : ''}`}
+      >
         {data.title}
       </p>
 
@@ -47,13 +52,13 @@ export const ToDoCard = ({ data, deleteTodo }: ToDoCardProp) => {
             )}
           </div>
 
-          <span className="btnText">{textData.done}</span>
+          <span className="yellowText">{textData.done}</span>
         </label>
 
         <button
           type="button"
           onClick={() => deleteTodo(data.id)}
-          className="p-1 btnText border-around-yellow hover:bg-white transition-colors"
+          className="p-1 yellowText border-around-yellow hover:bg-white transition-colors"
         >
           {textData.delete}
         </button>

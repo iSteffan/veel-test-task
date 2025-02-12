@@ -21,7 +21,7 @@ export const useTodosApi = () => {
       const response = await axios.get(`${API_URL}?_limit=10`);
       setTodos(response.data);
     } catch {
-      setError('Помилка завантаження завдань');
+      setError('Error loading tasks');
     } finally {
       setLoading(false);
     }
@@ -35,7 +35,7 @@ export const useTodosApi = () => {
       });
       setTodos(prev => [...prev, response.data]);
     } catch {
-      setError('Не вдалося додати завдання');
+      setError('Failed to add task');
     }
   };
 
@@ -44,7 +44,7 @@ export const useTodosApi = () => {
       await axios.delete(`${API_URL}/${id}`);
       setTodos(prev => prev.filter(todo => todo.id !== id));
     } catch {
-      setError('Не вдалося видалити завдання');
+      setError('Failed to delete task');
     }
   };
 
