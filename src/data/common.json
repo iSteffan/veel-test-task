@@ -1,3 +1,5 @@
 {
-  "header": { "task": "TASK", "btnText": "New task" }
+  "header": { "task": "TASK", "btnText": "New task" },
+  "delete": "Delete",
+  "done": "Done"
 }
