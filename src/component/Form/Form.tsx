@@ -26,12 +26,6 @@ export const Form = ({ addTodo, onClose }: TodoFormProps) => {
 
   const { form } = data;
 
-  //   const onSubmit = (data: { title: string; completed: boolean }) => {
-  //     addTodo({ ...data, userId: 1, id: Date.now() + Math.floor(Math.random() * 1000) });
-  //     reset();
-  //     onClose();
-  //   };
-
   const onSubmit = (data: { title: string; completed: boolean }) => {
     const newTodo = {
       id: Date.now() + Math.floor(Math.random() * 1000),

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/todos';
 
@@ -23,6 +24,7 @@ export const useTodosApi = () => {
       setTodos(response.data);
     } catch {
       setError('Error loading tasks');
+      toast.error('Error loading tasks');
     } finally {
       setLoading(false);
     }
@@ -32,8 +34,10 @@ export const useTodosApi = () => {
     try {
       const response = await axios.post(API_URL, todo);
       setTodos(prev => [...prev, response.data]);
+      toast.success('Task added');
     } catch {
       setError('Failed to add task');
+      toast.error('Failed to add task');
     }
   };
 
@@ -41,8 +45,10 @@ export const useTodosApi = () => {
     try {
       await axios.delete(`${API_URL}/${id}`);
       setTodos(prev => prev.filter(todo => todo.id !== id));
+      toast.success('Task deleted');
     } catch {
       setError('Failed to delete task');
+      toast.error('Failed to delete task');
     }
   };
 

@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Montserrat } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
 
 import { Header } from '@/layout/Header/Header';
 import { Footer } from '@/layout/Footer/Footer';
 
 import './globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const montserrat = Montserrat({
   subsets: ['cyrillic', 'latin'],
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     title: 'Next.js To do',
     description: 'Veel test task',
     url: 'https://veel-test-task.vercel.app/',
-    siteName: 'Next.js',
+    siteName: 'Veel toDo',
     images: [
       {
         url: '/meta/opengraph-image.jpg',
@@ -78,10 +80,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${filmP3.variable} flex flex-col min-h-screen`}>
+        <ToastContainer />
         <Header />
-
         <main className="flex-1 bg-lemonBg gradient-bg">{children}</main>
-
         <Footer />
       </body>
     </html>
