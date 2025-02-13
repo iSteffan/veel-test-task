@@ -1,5 +1,5 @@
 {
   "header": { "task": "TASK", "btnText": "New task" },
   "delete": "Delete",
-  "done": "Done"
+  "form": { "error": "Empty field", "title": "Title", "done": "Done", "addTask": "Add Task" }
 }

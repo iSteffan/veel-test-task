@@ -7,6 +7,7 @@ export interface Todo {
   id: number;
   title: string;
   completed: boolean;
+  userId: number;
 }
 
 export const useTodosApi = () => {
@@ -27,7 +28,7 @@ export const useTodosApi = () => {
     }
   };
 
-  const addTodo = async (todo: { title: string; completed: boolean; userId: number }) => {
+  const addTodo = async (todo: Todo) => {
     try {
       const response = await axios.post(API_URL, todo);
       setTodos(prev => [...prev, response.data]);

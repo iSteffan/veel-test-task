@@ -12,6 +12,8 @@ export interface ToDoCardProp {
 export const ToDoCard = ({ data, deleteTodo }: ToDoCardProp) => {
   const [isCompleted, setIsCompleted] = useState(data.completed);
 
+  const { form } = textData;
+
   return (
     <div
       className="p-4 mx-auto flex flex-col justify-between max-w-[400px] h-[100px] border-around-yellow bg-darkBg 
@@ -52,7 +54,7 @@ export const ToDoCard = ({ data, deleteTodo }: ToDoCardProp) => {
             )}
           </div>
 
-          <span className="yellowText">{textData.done}</span>
+          <span className="yellowText">{form.done}</span>
         </label>
 
         <button

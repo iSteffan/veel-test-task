@@ -4,8 +4,9 @@ import { useState } from 'react';
 
 import { ModalWindow } from '@/component/ModalWindow/ModalWindow';
 
-import data from '@/data/common.json';
 import { useTodosApi } from '@/hook/useTodosApi';
+
+import data from '@/data/common.json';
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
