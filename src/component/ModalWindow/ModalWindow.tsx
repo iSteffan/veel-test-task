@@ -1,11 +1,13 @@
-import { Button, Dialog, DialogPanel } from '@headlessui/react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Form } from '../Form/Form';
 
 export interface ModalProp {
   isOpen: boolean;
   onClose: () => void;
+  addTodo: (todo: { title: string; completed: boolean; userId: number }) => void;
 }
 
-export const ModalWindow = ({ isOpen, onClose }: ModalProp) => {
+export const ModalWindow = ({ isOpen, onClose, addTodo }: ModalProp) => {
   return (
     <Dialog open={isOpen} as="div" className="relative z-10 focus:outline-none" onClose={onClose}>
       <div
@@ -16,15 +18,10 @@ export const ModalWindow = ({ isOpen, onClose }: ModalProp) => {
         <div className="flex min-h-full items-center justify-center p-4">
           <DialogPanel
             transition
-            className="p-4 mx-auto flex flex-col justify-between max-w-[400px] h-[100px] border-around-yellow bg-darkBg 
-            md:h-[110px] backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            className="p-4 mx-auto flex flex-col justify-between max-w-[400px] h-auto border-around-yellow bg-darkBg 
+            backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
           >
-            <Button
-              className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
-              onClick={onClose}
-            >
-              Got it, thanks!
-            </Button>
+            <Form addTodo={addTodo} onClose={onClose} />
           </DialogPanel>
         </div>
       </div>

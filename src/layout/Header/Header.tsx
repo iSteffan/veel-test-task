@@ -5,9 +5,11 @@ import { useState } from 'react';
 import { ModalWindow } from '@/component/ModalWindow/ModalWindow';
 
 import data from '@/data/common.json';
+import { useTodosApi } from '@/hook/useTodosApi';
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { addTodo } = useTodosApi();
 
   const { header } = data;
 
@@ -31,7 +33,7 @@ export const Header = () => {
         </div>
       </header>
 
-      <ModalWindow isOpen={isModalOpen} onClose={handleToggleModal} />
+      <ModalWindow isOpen={isModalOpen} onClose={handleToggleModal} addTodo={addTodo} />
     </>
   );
 };

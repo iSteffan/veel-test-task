@@ -27,12 +27,9 @@ export const useTodosApi = () => {
     }
   };
 
-  const addTodo = async (title: string) => {
+  const addTodo = async (todo: { title: string; completed: boolean; userId: number }) => {
     try {
-      const response = await axios.post(API_URL, {
-        title,
-        completed: false,
-      });
+      const response = await axios.post(API_URL, todo);
       setTodos(prev => [...prev, response.data]);
     } catch {
       setError('Failed to add task');

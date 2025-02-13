@@ -31,6 +31,8 @@ export const metadata: Metadata = {
   description: 'Veel test task',
   generator: 'Next.js',
   applicationName: 'Next.js',
+  metadataBase: new URL('https://veel-test-task.vercel.app/'),
+
   referrer: 'origin-when-cross-origin',
   keywords: ['Next.js', 'React', 'JavaScript', 'Test task'],
   creator: 'Stepan Skichko',
@@ -46,21 +48,19 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
+    type: 'website',
     title: 'Next.js To do',
     description: 'Veel test task',
     url: 'https://veel-test-task.vercel.app/',
     siteName: 'Next.js',
     images: [
       {
-        url: '/meta/openGraph-veel.jpg',
-        width: 800,
-        height: 600,
+        url: '/meta/opengraph-image.jpg',
+        width: 1200,
+        height: 630,
         alt: 'To do test task',
       },
     ],
-
-    locale: 'en',
-    type: 'website',
   },
 
   robots: {
